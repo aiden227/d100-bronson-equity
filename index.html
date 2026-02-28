@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronson Equity | Stop Trading Time for Money. Start Building Mailbox Money.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Brawler&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #1E6AB4;
+            --cta-blue: #004CFF;
+            --dark-navy: #1A1A2E;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-gray: #555555;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); }
+        h1, h2, h3, h4 { font-family: 'Brawler', serif; }
+        .bg-brand { background-color: var(--brand-blue); }
+        .bg-navy { background-color: var(--dark-navy); }
+        .bg-light { background-color: var(--bg-light); }
+        .text-brand { color: var(--brand-blue); }
+        .text-navy { color: var(--dark-navy); }
+        .btn-cta {
+            background-color: var(--cta-blue);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        .btn-cta:hover { filter: brightness(90%); transform: translateY(-1px); }
+        .hero-overlay {
+            background: linear-gradient(rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.88));
+        }
+        .card { background: white; border: 1px solid #e5e5e5; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .step-content { display: none; }
+        .step-content.active { display: block; animation: slideUp 0.35s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .option-btn {
+            display: block; width: 100%; padding: 14px 20px; border: 2px solid #e0e0e0;
+            border-radius: 8px; text-align: left; font-size: 15px; font-weight: 500;
+            background: white; cursor: pointer; transition: all 0.2s; margin-bottom: 10px;
+        }
+        .option-btn:hover { border-color: var(--cta-blue); background: #f0f4ff; }
+        .progress-bar { height: 4px; background: #e0e0e0; border-radius: 2px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--cta-blue); transition: width 0.3s ease; border-radius: 2px; }
+        .faq-item { border-bottom: 1px solid #e5e5e5; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-chevron { transition: transform 0.3s ease; }
+        html { scroll-behavior: smooth; }
+        .stat-number { font-family: 'Inter', sans-serif; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <img src="images/logo_primary.png" alt="Bronson Equity" class="h-8 sm:h-10 brightness-0" style="filter: brightness(0);">
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                <a href="#how-it-works" class="hover:text-gray-900">How It Works</a>
+                <a href="#track-record" class="hover:text-gray-900">Track Record</a>
+                <a href="#testimonials" class="hover:text-gray-900">Testimonials</a>
+                <a href="#faq" class="hover:text-gray-900">FAQ</a>
+                <a href="#qualify" class="btn-cta text-sm py-2 px-5">Get Started</a>
+            </div>
+            <a href="#qualify" class="md:hidden btn-cta text-sm py-2 px-4">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center" style="background-image: url('images/property_exterior_2.jpg');">
+        <div class="hero-overlay">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Left: Copy -->
+                    <div class="text-white">
+                        <p class="text-sm font-semibold uppercase tracking-widest mb-4 opacity-80">For Accredited Investors Seeking Passive Income</p>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Stop Trading Time for Money. Start Building Mailbox Money.</h1>
+                        <p class="text-lg opacity-90 mb-6 leading-relaxed">Join 500+ investors earning quarterly distributions from pre-vetted multifamily real estate, oil and gas, and alternative investments. $250M+ portfolio. Up to 100% IRR on exited deals.</p>
+                        <p class="text-xs opacity-60">Past performance on realized investments is not indicative of future results. All investments carry risk including potential loss of capital.</p>
+
+                        <!-- VSL Placeholder -->
+                        <div class="mt-8 bg-black/30 rounded-xl p-1">
+                            <div class="aspect-video bg-gray-800 rounded-lg flex items-center justify-center cursor-pointer relative">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <p class="absolute bottom-4 text-white/70 text-sm">Watch the Full Strategy Video</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Qualification Form -->
+                    <div id="qualify" class="card p-6 sm:p-8">
+                        <h3 class="text-xl font-bold text-center mb-2 text-navy">See If You Qualify</h3>
+                        <p class="text-sm text-gray-500 text-center mb-5">Answer a few quick questions. Takes about 60 seconds.</p>
+
+                        <div class="progress-bar mb-6"><div class="progress-fill" id="progress1" style="width: 20%;"></div></div>
+
+                        <!-- Step 1 -->
+                        <div class="step-content active" id="step1-1">
+                            <p class="text-sm font-semibold text-gray-700 mb-1">Step 1 of 5</p>
+                            <p class="font-bold text-lg mb-4">Are you an accredited investor?</p>
+                            <button class="option-btn" onclick="goToStep(2, 'Yes')">Yes</button>
+                            <button class="option-btn" onclick="goToStep(2, 'No')">No</button>
+                            <button class="option-btn" onclick="goToStep(2, 'Not sure')">Not sure</button>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="step-content" id="step1-2">
+                            <p class="text-sm font-semibold text-gray-700 mb-1">Step 2 of 5</p>
+                            <p class="font-bold text-lg mb-4">How much capital are you looking to invest in the next 12 months?</p>
+                            <button class="option-btn" onclick="goToStep(3, '$50K-$100K')">$50K - $100K</button>
+                            <button class="option-btn" onclick="goToStep(3, '$100K-$250K')">$100K - $250K</button>
+                            <button class="option-btn" onclick="goToStep(3, '$250K-$500K')">$250K - $500K</button>
+                            <button class="option-btn" onclick="goToStep(3, '$500K+')">$500K+</button>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="step-content" id="step1-3">
+                            <p class="text-sm font-semibold text-gray-700 mb-1">Step 3 of 5</p>
+                            <p class="font-bold text-lg mb-4">What best describes your investing experience?</p>
+                            <button class="option-btn" onclick="goToStep(4, 'New')">New to passive investing</button>
+                            <button class="option-btn" onclick="goToStep(4, '1-3 deals')">Invested in 1-3 deals</button>
+                            <button class="option-btn" onclick="goToStep(4, '4+ deals')">Experienced investor (4+ deals)</button>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="step-content" id="step1-4">
+                            <p class="text-sm font-semibold text-gray-700 mb-1">Step 4 of 5</p>
+                            <p class="font-bold text-lg mb-4">What is your primary investment goal?</p>
+                            <button class="option-btn" onclick="goToStep(5, 'Cash flow')">Passive cash flow</button>
+                            <button class="option-btn" onclick="goToStep(5, 'Tax advantages')">Tax advantages</button>
+                            <button class="option-btn" onclick="goToStep(5, 'Wealth building')">Long-term wealth building</button>
+                            <button class="option-btn" onclick="goToStep(5, 'All')">All of the above</button>
+                        </div>
+                        <!-- Step 5: Contact -->
+                        <div class="step-content" id="step1-5">
+                            <p class="text-sm font-semibold text-gray-700 mb-1">Step 5 of 5</p>
+                            <p class="font-bold text-lg mb-4">Almost there. Enter your details below.</p>
+                            <form onsubmit="window.location.href='/thankyou'; return false;">
+                                <div class="grid grid-cols-2 gap-3 mb-3">
+                                    <input type="text" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-500">
+                                    <input type="text" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-500">
+                                </div>
+                                <input type="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm mb-3 focus:outline-none focus:border-blue-500">
+                                <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm mb-4 focus:outline-none focus:border-blue-500">
+                                <button type="submit" class="btn-cta w-full text-center">Get Started</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="bg-navy py-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+            <div>
+                <p class="stat-number text-3xl lg:text-4xl text-blue-300">$250M+</p>
+                <p class="text-sm mt-2 opacity-70">Assets Under Management</p>
+            </div>
+            <div>
+                <p class="stat-number text-3xl lg:text-4xl text-blue-300">$45M+</p>
+                <p class="text-sm mt-2 opacity-70">Raised From Investors</p>
+            </div>
+            <div>
+                <p class="stat-number text-3xl lg:text-4xl text-blue-300">2,500+</p>
+                <p class="text-sm mt-2 opacity-70">Multifamily Units</p>
+            </div>
+            <div>
+                <p class="stat-number text-3xl lg:text-4xl text-blue-300">100%</p>
+                <p class="text-sm mt-2 opacity-70">IRR on Exited Deals*</p>
+            </div>
+        </div>
+        <p class="text-center text-xs text-white/40 mt-6 max-w-3xl mx-auto px-4">*Past performance on specific realized investments. Not indicative of future results. All investments involve risk.</p>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="bg-light py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/bronson_hill_portrait.jpg" alt="Bronson Hill, CEO of Bronson Equity" class="rounded-xl shadow-lg w-full max-w-md mx-auto">
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-brand uppercase tracking-widest mb-3">Meet Bronson Hill</p>
+                    <h2 class="text-3xl lg:text-4xl mb-6 text-navy">From Medical Device Sales to $250M in Real Estate</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">Bronson Hill is the CEO and Managing Partner of Bronson Equity. A former medical device sales professional, he walked away from a high-paying career to build passive income through real estate and alternative investments.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4">Today, Bronson has personally raised over $45 million. His team manages a portfolio of over $250 million in multifamily real estate across 2,500+ units. He is the author of "Fire Yourself" and host of The Mailbox Money Show podcast.</p>
+                    <p class="text-gray-600 leading-relaxed mb-6">Bronson invests his own capital in every deal alongside his limited partners.</p>
+                    <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700">"My mission is simple: help high-earning professionals stop trading time for money and start building passive income that gives them their freedom back."</blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl lg:text-4xl text-navy mb-4">How Bronson Equity Investors Build Passive Income</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">A simple, proven system for building passive cash flow without becoming a landlord.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card p-6 text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h4 class="text-lg font-bold mb-2 text-navy">Join the Club</h4>
+                    <p class="text-sm text-gray-600">No cost. Get access to educational content, monthly meetups, our podcast, and 500+ investors.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h4 class="text-lg font-bold mb-2 text-navy">Pre-Vetted Deals</h4>
+                    <p class="text-sm text-gray-600">3-5 deals per year across multifamily, oil and gas, debt funds, and business acquisitions. Advisory board reviewed.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h4 class="text-lg font-bold mb-2 text-navy">Invest Passively</h4>
+                    <p class="text-sm text-gray-600">Deploy capital as a limited partner. We manage everything. Collect quarterly or monthly distributions.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-brand rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                    <h4 class="text-lg font-bold mb-2 text-navy">Diversify & Grow</h4>
+                    <p class="text-sm text-gray-600">Build a portfolio across multiple asset classes with different risk profiles and tax benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record -->
+    <section id="track-record" class="py-16 md:py-24 bg-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl lg:text-4xl text-navy mb-4">Our Track Record Speaks for Itself</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Real deals. Real results. Fully transparent.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card overflow-hidden">
+                    <img src="images/property_exterior_1.jpg" alt="Jacksonville property" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Exited</span>
+                        <h4 class="text-lg font-bold text-navy mb-1">Jacksonville, FL</h4>
+                        <p class="text-sm text-gray-500 mb-3">288 Units | Sold December 2021</p>
+                        <p class="stat-number text-3xl text-brand">100% IRR</p>
+                    </div>
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="images/property_amarillo.jpg" alt="Amarillo property" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Exited</span>
+                        <h4 class="text-lg font-bold text-navy mb-1">Amarillo, TX</h4>
+                        <p class="text-sm text-gray-500 mb-3">225 Units | Sold August 2021</p>
+                        <p class="stat-number text-3xl text-brand">26% IRR</p>
+                    </div>
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="images/property_rise_gateway.png" alt="Rise Gateway property" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">Active</span>
+                        <h4 class="text-lg font-bold text-navy mb-1">Rise Gateway</h4>
+                        <p class="text-sm text-gray-500 mb-3">148 Units | Acquired November 2024</p>
+                        <p class="stat-number text-3xl text-brand">Active</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8 max-w-2xl mx-auto">Past performance on these specific realized investments is not indicative of future results. All investments carry risk including loss of capital. IRR figures are pre-tax and represent specific exited deals.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl lg:text-4xl text-navy mb-4">What Our Investors Say</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <p class="text-gray-700 italic mb-4 leading-relaxed">"I finally found a group that does not try to put me in the same portfolio as a school teacher. The tax savings paid for my membership three times over."</p>
+                    <p class="font-bold text-navy">Marcus R.</p>
+                    <p class="text-sm text-gray-500">$12M Logistics Company</p>
+                </div>
+                <div class="card p-6">
+                    <p class="text-gray-700 italic mb-4 leading-relaxed">"The peer network is incredible. I got feedback from three other manufacturing guys in 48 hours. That used to take me months of research."</p>
+                    <p class="font-bold text-navy">David K.</p>
+                    <p class="text-sm text-gray-500">Manufacturing Executive</p>
+                </div>
+                <div class="card p-6">
+                    <p class="text-gray-700 italic mb-4 leading-relaxed">"The education sets them apart. I understand why each deal makes sense."</p>
+                    <p class="font-bold text-navy">Jennifer S.</p>
+                    <p class="text-sm text-gray-500">Former Restaurant Chain Owner</p>
+                </div>
+                <div class="card p-6">
+                    <p class="text-gray-700 italic mb-4 leading-relaxed">"This deal allowed me to retire my wife from the rat race. Additional passive income from real estate and oil."</p>
+                    <p class="font-bold text-navy">Fidel M.</p>
+                    <p class="text-sm text-gray-500">Current Investor</p>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8 max-w-3xl mx-auto">All individuals are current Bronson Equity investors. None were compensated for these testimonials. Individual results vary based on investment selection, market conditions, and personal circumstances.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="relative bg-cover bg-center" style="background-image: url('images/property_stone.jpg');">
+        <div class="hero-overlay py-16 md:py-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-white mb-10">
+                    <h2 class="text-3xl lg:text-4xl mb-4">Ready to Start Building Passive Income?</h2>
+                    <p class="text-lg opacity-90">Fill out the short qualification form below. A member of our team will reach out to schedule your investor briefing. No pressure, no obligation.</p>
+                </div>
+                <!-- Second Form -->
+                <div class="card p-6 sm:p-8 max-w-lg mx-auto">
+                    <h3 class="text-xl font-bold text-center mb-2 text-navy">See If You Qualify</h3>
+                    <p class="text-sm text-gray-500 text-center mb-5">Answer a few quick questions. Takes about 60 seconds.</p>
+                    <div class="progress-bar mb-6"><div class="progress-fill" id="progress2" style="width: 20%;"></div></div>
+
+                    <div class="step-content active" id="step2-1">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Step 1 of 5</p>
+                        <p class="font-bold text-lg mb-4">Are you an accredited investor?</p>
+                        <button class="option-btn" onclick="goToStep2(2, 'Yes')">Yes</button>
+                        <button class="option-btn" onclick="goToStep2(2, 'No')">No</button>
+                        <button class="option-btn" onclick="goToStep2(2, 'Not sure')">Not sure</button>
+                    </div>
+                    <div class="step-content" id="step2-2">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Step 2 of 5</p>
+                        <p class="font-bold text-lg mb-4">How much capital are you looking to invest in the next 12 months?</p>
+                        <button class="option-btn" onclick="goToStep2(3, '$50K-$100K')">$50K - $100K</button>
+                        <button class="option-btn" onclick="goToStep2(3, '$100K-$250K')">$100K - $250K</button>
+                        <button class="option-btn" onclick="goToStep2(3, '$250K-$500K')">$250K - $500K</button>
+                        <button class="option-btn" onclick="goToStep2(3, '$500K+')">$500K+</button>
+                    </div>
+                    <div class="step-content" id="step2-3">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Step 3 of 5</p>
+                        <p class="font-bold text-lg mb-4">What best describes your investing experience?</p>
+                        <button class="option-btn" onclick="goToStep2(4, 'New')">New to passive investing</button>
+                        <button class="option-btn" onclick="goToStep2(4, '1-3 deals')">Invested in 1-3 deals</button>
+                        <button class="option-btn" onclick="goToStep2(4, '4+ deals')">Experienced investor (4+ deals)</button>
+                    </div>
+                    <div class="step-content" id="step2-4">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Step 4 of 5</p>
+                        <p class="font-bold text-lg mb-4">What is your primary investment goal?</p>
+                        <button class="option-btn" onclick="goToStep2(5, 'Cash flow')">Passive cash flow</button>
+                        <button class="option-btn" onclick="goToStep2(5, 'Tax advantages')">Tax advantages</button>
+                        <button class="option-btn" onclick="goToStep2(5, 'Wealth building')">Long-term wealth building</button>
+                        <button class="option-btn" onclick="goToStep2(5, 'All')">All of the above</button>
+                    </div>
+                    <div class="step-content" id="step2-5">
+                        <p class="text-sm font-semibold text-gray-700 mb-1">Step 5 of 5</p>
+                        <p class="font-bold text-lg mb-4">Almost there. Enter your details below.</p>
+                        <form onsubmit="window.location.href='/thankyou'; return false;">
+                            <div class="grid grid-cols-2 gap-3 mb-3">
+                                <input type="text" placeholder="First Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm">
+                                <input type="text" placeholder="Last Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <input type="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm mb-3">
+                            <input type="tel" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm mb-4">
+                            <button type="submit" class="btn-cta w-full text-center">Get Started</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-24 bg-light">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl text-navy text-center mb-12">Frequently Asked Questions</h2>
+
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">What is a real estate syndication?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">A syndication is a way for investors to pool their capital together to purchase a large property (like a 200-unit apartment building). You invest as a limited partner, and the general partners (our team) handle everything: finding the deal, managing the property, and distributing returns to investors.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">Do I need to be an accredited investor?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">Most of our deals are structured under SEC Rule 506(b), which allows both accredited and sophisticated investors. On your introductory call, we will discuss your specific situation and what opportunities are available to you.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">What is the minimum investment?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">The minimum is typically $50,000, though some investors choose to start with more. Our Recessionary Income Fund has a $100,000 minimum.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">How often do I receive distributions?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">Most of our real estate syndications distribute quarterly. Our Recessionary Income Fund distributes monthly. Distributions typically begin 6-9 months after the deal closes.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">What kind of returns can I expect?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">Returns vary by deal and asset class. Our exited multifamily deals have returned between 14% and 100% IRR. Our oil and gas partnerships target 25-35% annual returns. Our debt fund targets 7-14% projected annual returns. Past performance on realized investments is not indicative of future results. Projected returns are not guaranteed. All investments carry risk.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">What tax benefits are available?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">Real estate investments provide depreciation and cost segregation benefits that can offset W-2 income. Oil and gas partnerships can provide 75-90% first-year tax deductions. Consult your tax professional for your specific situation.</p></div>
+            </div>
+            <div class="faq-item py-5 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center">
+                    <p class="font-bold text-navy pr-4">How do you vet the deals?</p>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="faq-answer"><p class="text-gray-600 text-sm mt-3 leading-relaxed">Every deal is personally reviewed by Bronson Hill and our advisory board, which includes Ken McElroy ($1B+ AUM), Michael Blank (2,000+ units), and Drew Whitson (finance professor, GP in 2,800+ units). We underwrite conservatively and build in margin of safety.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="images/logo_primary.png" alt="Bronson Equity" class="h-8 mb-4">
+                    <p class="text-sm text-gray-400 leading-relaxed">Bronson Equity helps accredited investors build passive income through pre-vetted multifamily real estate, oil and gas partnerships, and alternative investments.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3">Contact</h4>
+                    <p class="text-sm text-gray-400 mb-1">bronson@bronsonequity.com</p>
+                    <p class="text-sm text-gray-400">1750 SW Skyline Blvd, Suite 25<br>Portland, OR 97221</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/bronsonhill" target="_blank" class="text-gray-400 hover:text-white text-sm">LinkedIn</a>
+                        <a href="https://www.facebook.com/bronson.hill.37/" target="_blank" class="text-gray-400 hover:text-white text-sm">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6">
+                <p class="text-xs text-gray-500 leading-relaxed">This website is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Any such offer may only be made pursuant to the appropriate offering documents. Investments in real estate, oil and gas, and alternative assets involve significant risk, including the potential loss of capital. Past performance is not indicative of future results. Projected returns are targets and are not guaranteed. Bronson Equity is not registered as a securities dealer or broker. Please review all offering documents and consult with your financial and legal advisors before making any investment decision.</p>
+                <p class="text-xs text-gray-500 mt-4">&copy; 2026 Bronson Equity. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form 1 (Hero)
+        function goToStep(step, answer) {
+            for (let i = 1; i <= 5; i++) {
+                const el = document.getElementById('step1-' + i);
+                if (el) el.classList.remove('active');
+            }
+            const target = document.getElementById('step1-' + step);
+            if (target) target.classList.add('active');
+            document.getElementById('progress1').style.width = (step * 20) + '%';
+        }
+        // Form 2 (Final CTA)
+        function goToStep2(step, answer) {
+            for (let i = 1; i <= 5; i++) {
+                const el = document.getElementById('step2-' + i);
+                if (el) el.classList.remove('active');
+            }
+            const target = document.getElementById('step2-' + step);
+            if (target) target.classList.add('active');
+            document.getElementById('progress2').style.width = (step * 20) + '%';
+        }
+        // FAQ Accordion
+        function toggleFaq(el) {
+            el.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
